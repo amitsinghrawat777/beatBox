@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeatBox - Music for everyone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Circular:wght@300;400;500;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fa-brands fa-spotify"></i>
+                <span>BeatBox</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-link active">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Search</span>
+            </a>
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-book"></i>
+                <span>Your Library</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-plus"></i>
+                <span>Create Playlist</span>
+            </a>
+            <a href="#" class="nav-link" id="likedSongsNav">
+                <i class="fa-solid fa-heart"></i>
+                <span>Liked Songs</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-playlists">
+            <div class="playlist-item">My Playlist #1</div>
+            <div class="playlist-item">Chill Vibes</div>
+            <div class="playlist-item">Workout Mix</div>
+            <div class="playlist-item">Discover Weekly</div>
+            <div class="playlist-item">Release Radar</div>
+            <div class="playlist-item">Daily Mix 1</div>
+        </div>
+
+        <div class="install-app">
+            <i class="fa-solid fa-arrow-down-to-line"></i>
+            <span>Install App</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="top-bar">
+            <div class="nav-buttons">
+                <button class="nav-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="nav-btn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <div class="user-section">
+                <button class="user-btn">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Profile</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <div class="premium-banner">
+                <div class="banner-content">
+                    <span class="banner-text">Preview of BeatBox</span>
+                    <span class="banner-subtext">Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</span>
+                </div>
+                <button class="signup-btn">Sign up free</button>
+            </div>
+
+            <div class="hero-section">
+                <h1 class="greeting">Good evening</h1>
+                
+                <div class="quick-play-grid">
+                    <div class="quick-play-card">
+                        <img src="https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228" alt="Liked Songs">
+                        <span>Liked Songs</span>
+                        <button class="card-play-btn"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <div class="quick-play-card">
+                        <img src="https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb7a4781629469bb16d127e708/1/en/default" alt="Daily Mix">
+                        <span>Daily Mix 1</span>
+                        <button class="card-play-btn"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <div class="quick-play-card">
+                        <img src="https://i.scdn.co/image/ab67706f00000002724554ed6bed6f051d9b0bfc" alt="Discover Weekly">
+                        <span>Discover Weekly</span>
+                        <button class="card-play-btn"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="now-playing-section">
+                <h2 class="section-title">Now Playing</h2>
+                <div class="now-playing-card">
+                    <div class="now-playing-image">
+                        <img id="albumArt" src="https://via.placeholder.com/400" alt="Album Art">
+                        <button id="playLarge" class="play-overlay-btn">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="now-playing-info">
+                        <h3 id="title">Loading...</h3>
+                        <p id="artist">Please wait</p>
+                        <div class="song-actions">
+                            <button id="like" class="action-btn" title="Like">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="More options">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="playlist-section">
+                <div class="section-header">
+                    <h2 class="section-title">Queue</h2>
+                    <a href="#" class="show-all">Show all</a>
+                </div>
+                <div class="track-list">
+                    <div class="track-list-header">
+                        <span class="col-index">#</span>
+                        <span class="col-title">TITLE</span>
+                        <span class="col-album">ALBUM</span>
+                        <span class="col-duration"><i class="fa-regular fa-clock"></i></span>
+                    </div>
+                    <ul id="playlist" class="playlist-box"></ul>
+                </div>
+            </div>
+
+            <div class="recommended-section">
+                <h2 class="section-title">Made For You</h2>
+                <div class="cards-grid">
+                    <div class="music-card">
+                        <div class="card-image">
+                            <img src="https://i.scdn.co/image/ab67706f00000002724554ed6bed6f051d9b0bfc" alt="Playlist">
+                            <button class="card-play-btn"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                        <h3 class="card-title">Discover Weekly</h3>
+                        <p class="card-description">Your weekly mixtape of fresh music</p>
+                    </div>
+                    <div class="music-card">
+                        <div class="card-image">
+                            <img src="https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb7a4781629469bb16d127e708/1/en/default" alt="Playlist">
+                            <button class="card-play-btn"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                        <h3 class="card-title">Daily Mix 1</h3>
+                        <p class="card-description">The Weeknd, Drake, Post Malone and more</p>
+                    </div>
+                    <div class="music-card">
+                        <div class="card-image">
+                            <img src="https://seed-mix-image.spotifycdn.com/v6/img/artist/3TVXtAsR1Inumwj472S9r4/en/default" alt="Playlist">
+                            <button class="card-play-btn"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                        <h3 class="card-title">Release Radar</h3>
+                        <p class="card-description">Catch all the latest music</p>
+                    </div>
+                    <div class="music-card">
+                        <div class="card-image">
+                            <img src="https://i.scdn.co/image/ab67706f00000002d073e656e546de0c0ff59980" alt="Playlist">
+                            <button class="card-play-btn"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                        <h3 class="card-title">Your Top Songs 2024</h3>
+                        <p class="card-description">Your most played songs this year</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Player Bar -->
+    <div class="player-bar">
+        <audio id="audio"></audio>
+        
+        <div class="player-left">
+            <div class="track-thumbnail">
+                <img id="playerAlbumArt" src="https://via.placeholder.com/56" alt="Track">
+            </div>
+            <div class="track-info">
+                <div id="playerTitle" class="track-name">Loading...</div>
+                <div id="playerArtist" class="track-artist">Please wait</div>
+            </div>
+            <button id="playerLike" class="player-action-btn" title="Like">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+        </div>
+
+        <div class="player-center">
+            <div class="player-controls">
+                <button class="control-btn shuffle-btn" title="Shuffle">
+                    <i class="fa-solid fa-shuffle"></i>
+                </button>
+                <button id="prev" class="control-btn" title="Previous">
+                    <i class="fa-solid fa-backward-step"></i>
+                </button>
+                <button id="play" class="control-btn play-btn" title="Play">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+                <button id="next" class="control-btn" title="Next">
+                    <i class="fa-solid fa-forward-step"></i>
+                </button>
+                <button class="control-btn repeat-btn" title="Repeat">
+                    <i class="fa-solid fa-repeat"></i>
+                </button>
+            </div>
+            <div class="progress-container">
+                <span id="timestamp" class="time">0:00</span>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                    <input type="range" id="progress" value="0" min="0" max="100">
+                </div>
+                <span id="duration" class="time">0:00</span>
+            </div>
+        </div>
+
+        <div class="player-right">
+            <button class="player-action-btn" title="Queue">
+                <i class="fa-solid fa-list"></i>
+            </button>
+            <button class="player-action-btn" title="Connect to a device">
+                <i class="fa-solid fa-desktop"></i>
+            </button>
+            <div class="volume-control">
+                <button class="player-action-btn" title="Volume">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+                <input type="range" class="volume-bar" value="100" min="0" max="100">
+            </div>
+            <button class="player-action-btn" title="Full screen">
+                <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
